@@ -1,0 +1,29 @@
+[2024-09-03T11:27:58.039+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-03T11:27:58.060+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ETL_apache_airflow.download_dataset manual__2024-09-03T11:27:55.662121+00:00 [queued]>
+[2024-09-03T11:27:58.074+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ETL_apache_airflow.download_dataset manual__2024-09-03T11:27:55.662121+00:00 [queued]>
+[2024-09-03T11:27:58.075+0000] {taskinstance.py:2856} INFO - Starting attempt 1 of 2
+[2024-09-03T11:27:58.094+0000] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): download_dataset> on 2024-09-03 11:27:55.662121+00:00
+[2024-09-03T11:27:58.104+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=69) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-09-03T11:27:58.106+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'ETL_apache_***', 'download_dataset', 'manual__2024-09-03T11:27:55.662121+00:00', '--job-id', '134', '--raw', '--subdir', 'DAGS_FOLDER/ETL.py', '--cfg-path', '/tmp/tmp15pctpyx']
+[2024-09-03T11:27:58.107+0000] {standard_task_runner.py:72} INFO - Started process 71 to run task
+[2024-09-03T11:27:58.107+0000] {standard_task_runner.py:105} INFO - Job 134: Subtask download_dataset
+[2024-09-03T11:27:58.176+0000] {task_command.py:467} INFO - Running <TaskInstance: ETL_apache_airflow.download_dataset manual__2024-09-03T11:27:55.662121+00:00 [running]> on host 8abab1ccc371
+[2024-09-03T11:27:58.311+0000] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='buitiensang191@gmail.com' AIRFLOW_CTX_DAG_OWNER='Bui Tien Sang' AIRFLOW_CTX_DAG_ID='ETL_apache_***' AIRFLOW_CTX_TASK_ID='download_dataset' AIRFLOW_CTX_EXECUTION_DATE='2024-09-03T11:27:55.662121+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-03T11:27:55.662121+00:00'
+[2024-09-03T11:27:58.313+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-09-03T11:27:58.314+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-09-03T11:27:58.316+0000] {logging_mixin.py:190} INFO - Current task name:download_dataset state:running start_date:2024-09-03 11:27:58.061723+00:00
+[2024-09-03T11:27:58.317+0000] {logging_mixin.py:190} INFO - Dag name:ETL_apache_*** and current dag run status:running
+[2024-09-03T11:27:58.318+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-03T11:28:01.607+0000] {logging_mixin.py:190} INFO - File downloaded successfully to /opt/***/dags/staging/toll_data.tgz
+[2024-09-03T11:28:01.608+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-09-03T11:28:01.620+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-03T11:28:01.621+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=ETL_apache_***, task_id=download_dataset, run_id=manual__2024-09-03T11:27:55.662121+00:00, execution_date=20240903T112755, start_date=20240903T112758, end_date=20240903T112801
+[2024-09-03T11:28:01.637+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2024-09-03T11:28:01.638+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2024-09-03T11:28:01.638+0000] {logging_mixin.py:190} INFO - Dag name:ETL_apache_*** queued_at:2024-09-03 11:27:55.685289+00:00
+[2024-09-03T11:28:01.639+0000] {logging_mixin.py:190} INFO - Task hostname:8abab1ccc371 operator:PythonOperator
+[2024-09-03T11:28:01.662+0000] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2024-09-03T11:28:01.693+0000] {taskinstance.py:3891} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-09-03T11:28:01.697+0000] {local_task_job_runner.py:240} INFO - ::endgroup::
