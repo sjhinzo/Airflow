@@ -78,10 +78,124 @@ download_dataset --> extract_tgz --> [extract_data_from_csv, extract_data_from_f
 
 ### Step 2: Monitor Workflow
 - Use Graph View or Tree View to track task progress
-- Task status indicators:
-  - ✅ Green: Success
-  - 🟡 Yellow: Running
-  - ❌ Red: Failed
+# **Task Status Indicators in Airflow**
+
+Apache Airflow uses color-coded status indicators to represent the current state of tasks in a DAG. Below is the meaning of each status:
+
+---
+
+### ✅ **Success (Dark Green)**
+- **Meaning**: The task completed successfully without any errors.
+- **Next Steps**: No further action is needed. The task has been executed successfully.
+
+---
+
+### 💚 **Running (Light Green)**
+- **Meaning**: The task is currently being executed.
+- **Next Steps**: Monitor the task in **Graph View** or check **Logs** for progress.
+
+---
+
+### ❌ **Failed (Red)**
+- **Meaning**: The task failed during execution.
+- **Next Steps**:
+  1. Click on the task in the Airflow UI.
+  2. Review the **Logs** to identify the error and resolve it.
+
+---
+
+### 🟣 **Deferred (Light Purple)**
+- **Meaning**: The task has been deferred and is waiting for specific conditions to be met before execution.
+- **Next Steps**:
+  - Check the DAG to ensure the trigger conditions or upstream dependencies are satisfied.
+
+---
+
+### ⚪ **Queued (Gray)**
+- **Meaning**: The task is queued and waiting to be executed.
+- **Next Steps**:
+  - Verify that sufficient system resources (CPU, memory) are available.
+  - Ensure the Airflow scheduler is running.
+
+---
+
+### ⚪ **Removed (Gray)**
+- **Meaning**: The task has been removed from the DAG or is no longer executable.
+- **Next Steps**: No action is required if the task was intentionally removed.
+
+---
+
+### 💗 **Restarting (Pink)**
+- **Meaning**: The task is being restarted after encountering a failure.
+- **Next Steps**:
+  - Monitor the task in **Logs** or **Graph View** to ensure proper execution after restarting.
+
+---
+
+### ⚪ **Scheduled (Gray)**
+- **Meaning**: The task is scheduled and will run at the specified time.
+- **Next Steps**:
+  - Check the schedule or review **Logs** to confirm the timing.
+
+---
+
+### 🔵 **Shutdown (Blue)**
+- **Meaning**: The task has been manually stopped or halted due to a system shutdown.
+- **Next Steps**:
+  - Investigate the cause of the shutdown and restart the task if necessary.
+
+---
+
+### 💗 **Skipped (Pink)**
+- **Meaning**: The task was skipped, often due to unsatisfied conditions or dependencies.
+- **Next Steps**:
+  - Verify the DAG logic (e.g., Branch Operator or Trigger Rules) to ensure the conditions are correct.
+
+---
+
+### 🔷 **Up for Reschedule (Turquoise)**
+- **Meaning**: The task is waiting to be rescheduled due to unmet conditions during the initial attempt.
+- **Next Steps**:
+  - Monitor the DAG or check the **Logs** to identify why the task was rescheduled.
+
+---
+
+### 🟡 **Up for Retry (Yellow)**
+- **Meaning**: The task failed previously but is now retrying automatically as per the retry policy.
+- **Next Steps**:
+  - Monitor the task to ensure the issue is resolved or increase the retry attempts if needed.
+
+---
+
+### 🟡 **Upstream Failed (Yellow)**
+- **Meaning**: The task could not execute because an upstream task it depends on failed.
+- **Next Steps**:
+  - Check the status of the upstream task and fix the issue before rerunning the DAG.
+
+---
+
+### ⚪ **No Status (Gray)**
+- **Meaning**: The task has not started or no status has been recorded yet.
+- **Next Steps**:
+  - Ensure that the DAG is enabled and the scheduler is running.
+
+---
+
+## **How to Use Task Status Indicators**
+
+1. **Monitor DAG Status**:
+   - Use **Graph View** or **Tree View** in the Airflow UI to visualize task statuses and dependencies.
+   
+2. **Check Logs**:
+   - For statuses such as **❌ Failed**, **💗 Restarting**, or **🟡 Up for Retry**, review the task **Logs** to diagnose and resolve issues.
+   
+3. **System Management**:
+   - States like **🔵 Shutdown** or **🟣 Deferred** may require you to check the DAG configuration or system setup.
+
+---
+
+If you need additional details or further assistance, feel free to reach out! 😊
+
 ![image](https://github.com/user-attachments/assets/6cf6fa56-787a-4592-b834-d585fc07170e)
 ### **GRAPH**:
 ![image](https://github.com/user-attachments/assets/e2a72e25-817f-4d29-b303-269b983b89ea)
