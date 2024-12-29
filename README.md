@@ -41,7 +41,7 @@ download_dataset --> extract_tgz --> [extract_data_from_csv, extract_data_from_f
       --> check_data_files
 ```
 
-## 🔧 Installation & Setup
+## 🔧 Installation & Setup  & Demo Projects
 
 ### Prerequisites
 - Docker and Docker Compose installed on your machine
@@ -58,17 +58,23 @@ download_dataset --> extract_tgz --> [extract_data_from_csv, extract_data_from_f
    ```bash
    docker-compose up -d
    ```
+   ![image](https://github.com/user-attachments/assets/40a80fad-2c8a-442f-a72a-8ce69d9db3a1)
+ **UI Docker**:
+   ![image](https://github.com/user-attachments/assets/ae431347-3d23-4c9b-871b-aaad0d58f48b)
 
-4. **Access Airflow**:
+5. **Access Airflow**:
    - URL: http://localhost:8080
    - Username: airflow
    - Password: airflow
-
+![image](https://github.com/user-attachments/assets/6f442225-dad0-4cac-8cc0-1523726bdfbe)
+### **UI Airflow**:
+![image](https://github.com/user-attachments/assets/de9cf037-effc-4706-92bb-862e6bf9b024)
 ## 🚀 Running the Workflow
 
 ### Step 1: Enable and Trigger DAG
 - In Airflow UI, locate and enable the DAG `ETL_apache_airflow`
 - Click "Trigger DAG" to start execution
+![image](https://github.com/user-attachments/assets/f7934807-4065-41a4-ac15-d1473c714a33)
 
 ### Step 2: Monitor Workflow
 - Use Graph View or Tree View to track task progress
@@ -76,14 +82,20 @@ download_dataset --> extract_tgz --> [extract_data_from_csv, extract_data_from_f
   - ✅ Green: Success
   - 🟡 Yellow: Running
   - ❌ Red: Failed
+![image](https://github.com/user-attachments/assets/6cf6fa56-787a-4592-b834-d585fc07170e)
+### **GRAPH**:
+![image](https://github.com/user-attachments/assets/e2a72e25-817f-4d29-b303-269b983b89ea)
 
 ### Step 3: Check Logs
 - Click on individual tasks to view detailed execution logs
+### **LOGS**:
+![image](https://github.com/user-attachments/assets/66907f1e-a078-4878-b4ce-4924c5c0fba1)
 
 ### Step 4: Validate Output
 Generated files:
 - `transformed_data.csv`: Consolidated and normalized CSV file
 - `transformed_data.json`: JSON format for API integration
+![image](https://github.com/user-attachments/assets/e50f7aa3-dab0-40a4-bdd4-277a9bbe4410)
 
 ## 📂 Project Structure
 ```
@@ -111,3 +123,4 @@ Generated files:
 For questions or issues, please:
 - Open an issue in this repository
 - Contact: buitiensang191@gmail.com
+- Linkedin: https://www.linkedin.com/in/sjhinzo/
